@@ -18,6 +18,8 @@ namespace Extensiones.Services
 
         public async Task SendEmailAsync(MailRequest mailRequest)
         {
+
+            // https://accounts.google.com/DisplayUnlockCaptcha para permitir envios desde gmail
             var email = new MimeMessage();
             //email.Sender = MailboxAddress.Parse(_mailSettings.EmailFromAddress);
             email.To.Add(MailboxAddress.Parse(mailRequest.ToEmail));
