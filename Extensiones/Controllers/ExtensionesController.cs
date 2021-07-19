@@ -1,4 +1,5 @@
-﻿using Extensiones.Models;
+﻿using Extensiones.Clases;
+using Extensiones.Models;
 using Extensiones.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -28,6 +29,30 @@ namespace Extensiones.Controllers
             {
                 throw;
             }
+        }
+
+        [HttpPost("cifrar")]
+        public IActionResult CifrarCadena(string cadena, string clave = "dr3nkEPjF0aTKX4z2L21qQ%3d%3d")
+        {
+            string cadenaCifrada = Cifrado.Cifrar(cadena, clave);
+
+            return Ok(cadenaCifrada);
+        }
+
+        [HttpPost("descifrar")]
+        public IActionResult DescifrarCadena(string cifrado, string clave = "dr3nkEPjF0aTKX4z2L21qQ%3d%3d")
+        {
+            string cadenaDescifrada = Cifrado.Descifrar(cifrado, clave);
+
+            if (cadenaDescifrada == "La firma es erronea")
+            {
+                return StatusCode(401, cadenaDescifrada);
+            }else
+            {
+                return Ok(cadenaDescifrada);
+            }
+
+            
         }
     }
 }
