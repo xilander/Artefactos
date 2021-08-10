@@ -31,7 +31,7 @@ namespace Extensiones.Controllers
             }
         }
 
-        [HttpPost("cifrar")]
+        [HttpGet("cifrar")]
         public IActionResult CifrarCadena(string cadena, string clave = "dr3nkEPjF0aTKX4z2L21qQ%3d%3d")
         {
             string cadenaCifrada = Cifrado.Cifrar(cadena, clave);
@@ -39,7 +39,7 @@ namespace Extensiones.Controllers
             return Ok(cadenaCifrada);
         }
 
-        [HttpPost("descifrar")]
+        [HttpGet("descifrar")]
         public IActionResult DescifrarCadena(string cifrado, string clave = "dr3nkEPjF0aTKX4z2L21qQ%3d%3d")
         {
             string cadenaDescifrada = Cifrado.Descifrar(cifrado, clave);

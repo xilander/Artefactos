@@ -22,14 +22,21 @@ namespace Extensiones
         public void ConfigureServices(IServiceCollection services)
         {
             // Configuaración de CORS
-            //services.AddCors(options =>
-            //{
-            //    var frontendURL = Configuration.GetValue<string>("frontend_url");
-            //    options.AddDefaultPolicy(builder =>
-            //    {
-            //        builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader();
-            //    });
-            //});
+            services.AddCors(options =>
+            {
+                //var frontendURL = Configuration.GetValue<string>("frontend_url");
+
+                //options.AddDefaultPolicy(builder =>
+                //{
+                //    builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader();
+                //});
+                options.AddPolicy("CorsRule", rule =>
+                {
+                    rule.AllowAnyHeader().AllowAnyMethod().WithOrigins("*");
+                });
+            });
+
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -56,7 +63,7 @@ namespace Extensiones
 
             app.UseRouting();
 
-            //app.UseCors();
+            app.UseCors("CorsRule");
 
             app.UseAuthorization();
 
