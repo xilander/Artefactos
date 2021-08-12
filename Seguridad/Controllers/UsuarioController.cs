@@ -5,6 +5,8 @@ using Seguridad.Core.Aplication;
 using Seguridad.Dto;
 using System.Threading.Tasks;
 
+// MediatR librería para implementar el patrón CQRS
+
 namespace Seguridad.Controllers
 {
     [Route("api/[controller]")]

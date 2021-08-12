@@ -7,6 +7,7 @@ namespace Seguridad.Persistence
 {
     public class SeguridadData
     {
+        // Clase para crear un usuario de prueba en la base de datos
         public static async Task InsertarUsuario(SeguridadContexto context, UserManager<Usuario> usuarioManger)
         {
             if (!usuarioManger.Users.Any())
@@ -16,7 +17,7 @@ namespace Seguridad.Persistence
                     Nombre = "Administrador",
                     CondominioId = 0,
                     ViviendaId = 0,
-                    Email = "xilander@cosmox.mx",
+                    Email = "correo@correo.com",
                     UserName = "admin"
                 };
 

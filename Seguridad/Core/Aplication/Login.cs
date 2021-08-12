@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace Seguridad.Core.Aplication
 {
+    // Las clases en la carpeta de Aplicación implementan el patrón CQRS
     public class Login
     {
         public class UsuarioLoginCommand : IRequest<UsuarioDto>

@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace Seguridad.Aplication
 {
+    // Las clases en la carpeta de Aplicación implementan el patrón CQRS
     public class Register
     {
         public class UsuarioRegisterCommand : IRequest<UsuarioDto>

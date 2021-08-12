@@ -2,6 +2,7 @@
 
 namespace Seguridad.Entities
 {
+    // Campos adicionales a los generados por el Identity   
     public class Usuario: IdentityUser
     {
         public string Nombre { get; set; }

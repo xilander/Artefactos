@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Seguridad.Persistence
 {
+    // 
     public class SeguridadContexto: IdentityDbContext<Entities.Usuario>
     {
         public SeguridadContexto(DbContextOptions options): base(options)

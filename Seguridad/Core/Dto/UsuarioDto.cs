@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Seguridad.Dto
 {
+    // Principal uso del DTO es no mostrar el password
     public class UsuarioDto
     {
         public string Id { get; set; }
